@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Accordion from "./components/Accordion/Accordion";
 import { Rating } from "./components/Rating/Rating";
+import { OnOff } from "./components/OnOff/OnOff";
 
 function hello() {
   debugger;
@@ -13,6 +14,7 @@ function App() {
   console.log("App is rendering");
   return (
     <div>
+      <OnOff on={false} />
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />
       Article 1
@@ -29,11 +31,11 @@ function App() {
     </div>
   );
 }
+
 type PageTitlePropsType = {
   title: string;
 };
 function PageTitle(props: PageTitlePropsType) {
-  debugger;
   console.log("PageTitle is rendering");
   return <h1>{props.title}</h1>;
 }
