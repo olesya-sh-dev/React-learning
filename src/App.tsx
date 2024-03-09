@@ -14,9 +14,8 @@ function App() {
   console.log("App is rendering");
   return (
     <div>
-      <OnOffDimych on={true} />
-      <OnOffDimych on={false} />
-      <OnOffDimych on={true} />
+      {/* <OnOffDimych on={true} /> */}
+      <OnOffDimych />
       {/* <OnOff on={false} />
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />

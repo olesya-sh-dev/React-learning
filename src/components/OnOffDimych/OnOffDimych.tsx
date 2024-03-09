@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 type PropsType = {
-  on: boolean;
+  //   on: boolean;
 };
 
 function OnOffDimych(props: PropsType) {
+  let [on, setOn] = useState(false);
+
   const onStyle = {
     width: "30px",
     height: "20px",
     border: "1px solid black",
     display: "inline-block",
     padding: "2px",
-    backgroundColor: props.on ? "green" : "white",
+    backgroundColor: on ? "green" : "white",
   };
   const offStyle = {
     width: "30px",
@@ -20,7 +22,7 @@ function OnOffDimych(props: PropsType) {
     display: "inline-block",
     marginLeft: "2px",
     padding: "2px",
-    backgroundColor: !props.on ? "red" : "white",
+    backgroundColor: !on ? "red" : "white",
   };
   const indicatorStyle = {
     width: "10px",
@@ -29,13 +31,27 @@ function OnOffDimych(props: PropsType) {
     border: "1px solid black",
     display: "inline-block",
     marginLeft: "5px",
-    backgroundColor: props.on ? "green" : "red",
+    backgroundColor: on ? "green" : "red",
   };
 
   return (
     <div>
-      <div style={onStyle}>On</div>
-      <div style={offStyle}>Off</div>
+      <div
+        style={onStyle}
+        onClick={() => {
+          setOn(true);
+        }}
+      >
+        On
+      </div>
+      <div
+        style={offStyle}
+        onClick={() => {
+          setOn(false);
+        }}
+      >
+        Off
+      </div>
       <div style={indicatorStyle}></div>
     </div>
   );
