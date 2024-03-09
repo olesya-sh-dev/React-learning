@@ -5,6 +5,7 @@ import "./App.css";
 // import { Rating } from "./components/Rating/Rating";
 // import { OnOff } from "./components/OnOff/OnOff";
 import OnOffDimych from "./components/OnOffDimych/OnOffDimych";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -16,6 +17,8 @@ function App() {
     <div>
       {/* <OnOffDimych on={true} /> */}
       <OnOffDimych />
+      <UncontrolledAccordion titleValue={"Menu"} />
+      <UncontrolledAccordion titleValue={"Users"} />
       {/* <OnOff on={false} />
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />
