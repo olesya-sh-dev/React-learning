@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
-import Accordion from "./components/Accordion/Accordion";
-import { Rating } from "./components/Rating/Rating";
-import { OnOff } from "./components/OnOff/OnOff";
+// import Accordion from "./components/Accordion/Accordion";
+// import { Rating } from "./components/Rating/Rating";
+// import { OnOff } from "./components/OnOff/OnOff";
+import OnOffDimych from "./components/OnOffDimych/OnOffDimych";
 
 function hello() {
-  debugger;
   alert("IT-KAMASUTRA");
 }
 // hello();
@@ -14,7 +14,10 @@ function App() {
   console.log("App is rendering");
   return (
     <div>
-      <OnOff on={false} />
+      <OnOffDimych on={true} />
+      <OnOffDimych on={false} />
+      <OnOffDimych on={true} />
+      {/* <OnOff on={false} />
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />
       Article 1
@@ -27,7 +30,7 @@ function App() {
       <Rating value={2} />
       <Rating value={3} />
       <Rating value={4} />
-      <Rating value={5} />
+      <Rating value={5} /> */}
     </div>
   );
 }
