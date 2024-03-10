@@ -91,14 +91,22 @@ export function UncontrolledRating() {
   };
   function Star(props: StarPropsType) {
     console.log("Star is rendering");
-    if (props.selected === true) {
-      return (
-        <span>
-          <b>star </b>
-        </span>
-      );
-    } else {
-      return <span>star </span>;
-    }
+    return props.selected === true ? (
+      <span>
+        <b>star </b>
+      </span>
+    ) : (
+      <span>star </span>
+    );
+
+    // if (props.selected === true) {
+    //   return (
+    //     <span>
+    //       <b>star </b>
+    //     </span>
+    //   );
+    // } else {
+    //   return <span>star </span>;
+    // }
   }
 }

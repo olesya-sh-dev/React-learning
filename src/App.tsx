@@ -1,12 +1,11 @@
 import React from "react";
-
 import "./App.css";
-// import Accordion from "./components/Accordion/Accordion";
-// import { Rating } from "./components/Rating/Rating";
 // import { OnOff } from "./components/OnOff/OnOff";
 import OnOffDimych from "./components/OnOffDimych/OnOffDimych";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
+import { Rating } from "./components/Rating/Rating";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -15,12 +14,15 @@ function hello() {
 function App() {
   console.log("App is rendering");
   return (
-    <div>
+    <div className={"App"}>
       {/* <OnOffDimych on={true} /> */}
       <OnOffDimych />
       <UncontrolledAccordion titleValue={"Menu"} />
       <UncontrolledAccordion titleValue={"Users"} />
+      <Accordion titleValue={"Menu"} collapsed={true} />
+      <Accordion titleValue={"Users"} collapsed={false} />
       <UncontrolledRating />
+      <Rating value={3} />
       {/* <OnOff on={false} />
       <PageTitle title={"This is APP component"} />
       <PageTitle title={"My friends"} />
