@@ -3,6 +3,7 @@ import "./App.css";
 
 import { Rating, RatingValueType } from "./components/Rating/Rating";
 import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -12,11 +13,17 @@ function App() {
   console.log("App is rendering");
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+  let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
 
   return (
     <div className={"App"}>
       <Rating value={ratingValue} onClick={setRatingValue} />
       <UncontrolledRating />
+      <Accordion
+        titleValue="Menu"
+        collapsed={accordionCollapsed}
+        onClick={() => setAccordionCollapsed(!accordionCollapsed)}
+      />
     </div>
   );
 }
