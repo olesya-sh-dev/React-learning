@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 
 import { Rating, RatingValueType } from "./components/Rating/Rating";
+import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className={"App"}>
       <Rating value={ratingValue} onClick={setRatingValue} />
+      <UncontrolledRating />
     </div>
   );
 }
