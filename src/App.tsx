@@ -1,11 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-// import { OnOff } from "./components/OnOff/OnOff";
-import OnOffDimych from "./components/OnOffDimych/OnOffDimych";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
-import Accordion from "./components/Accordion/Accordion";
-import { Rating } from "./components/Rating/Rating";
+
+import { Rating, RatingValueType } from "./components/Rating/Rating";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -13,30 +9,12 @@ function hello() {
 // hello();
 function App() {
   console.log("App is rendering");
+
+  let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+
   return (
     <div className={"App"}>
-      {/* <OnOffDimych on={true} /> */}
-      <OnOffDimych />
-      <UncontrolledAccordion titleValue={"Menu"} />
-      <UncontrolledAccordion titleValue={"Users"} />
-      <Accordion titleValue={"Menu"} collapsed={true} />
-      <Accordion titleValue={"Users"} collapsed={false} />
-      <UncontrolledRating />
-      <Rating value={3} />
-      {/* <OnOff on={false} />
-      <PageTitle title={"This is APP component"} />
-      <PageTitle title={"My friends"} />
-      Article 1
-      <Rating value={3} />
-      <Accordion titleValue={"Menu"} collapsed={true} />
-      <Accordion titleValue={"Users"} collapsed={false} />
-      Article 2
-      <Rating value={0} />
-      <Rating value={1} />
-      <Rating value={2} />
-      <Rating value={3} />
-      <Rating value={4} />
-      <Rating value={5} /> */}
+      <Rating value={ratingValue} onClick={setRatingValue} />
     </div>
   );
 }
