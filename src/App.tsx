@@ -5,6 +5,7 @@ import { Rating, RatingValueType } from "./components/Rating/Rating";
 import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
 import OnOffFromLesson from "./components/OnOffFromLesson/OnOffFromLesson";
+import UnControlledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -27,6 +28,8 @@ function App() {
         onChange={() => setAccordionCollapsed(!accordionCollapsed)}
       />
       <OnOffFromLesson on={switchOn} onChange={setSwitchOn} />
+      <UnControlledOnOff onChange={setSwitchOn} />
+      {switchOn.toString()}
     </div>
   );
 }
