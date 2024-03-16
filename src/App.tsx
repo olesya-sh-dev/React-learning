@@ -4,6 +4,7 @@ import "./App.css";
 import { Rating, RatingValueType } from "./components/Rating/Rating";
 import { UncontrolledRating } from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
+import OnOffFromLesson from "./components/OnOffFromLesson/OnOffFromLesson";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -14,9 +15,11 @@ function App() {
 
   let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
+  let [on, setOn] = useState(false);
 
   return (
     <div className={"App"}>
+      <OnOffFromLesson onClick={() => setOn(!on)} on={on} />
       <Rating value={ratingValue} onClick={setRatingValue} />
       <UncontrolledRating />
       <Accordion
