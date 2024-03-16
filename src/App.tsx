@@ -25,7 +25,7 @@ function App() {
       <Accordion
         titleValue="Menu"
         collapsed={accordionCollapsed}
-        onClick={() => setAccordionCollapsed(!accordionCollapsed)}
+        onChange={() => setAccordionCollapsed(!accordionCollapsed)}
       />
     </div>
   );
