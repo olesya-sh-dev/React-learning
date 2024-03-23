@@ -5,7 +5,7 @@ type PropsType = {
   onChange: (on: boolean) => void;
 };
 
-function OnOffFromLesson(props: PropsType) {
+export function OnOffFromLesson(props: PropsType) {
   const onStyle = {
     width: "30px",
     height: "20px",
@@ -55,5 +55,3 @@ function OnOffFromLesson(props: PropsType) {
     </div>
   );
 }
-
-export default OnOffFromLesson;
