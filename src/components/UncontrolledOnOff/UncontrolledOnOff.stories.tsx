@@ -15,3 +15,6 @@ export const OnMode = () => (
 export const OffMode = () => (
   <UnControlledOnOff defaultOn={false} onChange={callback} />
 );
+export const BugMode = () => (
+  <div>Unsymc when change defaultValue when already rendered</div>
+);
