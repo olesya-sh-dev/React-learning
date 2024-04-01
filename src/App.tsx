@@ -6,6 +6,7 @@ import { UncontrolledRating } from "./components/UncontrolledRating/Uncontrolled
 import { Accordion } from "./components/Accordion/Accordion";
 import { OnOffFromLesson } from "./components/OnOffFromLesson/OnOffFromLesson";
 import { UnControlledOnOff } from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import { Select } from "./components/Select/Select";
 
 function hello() {
   alert("IT-KAMASUTRA");
@@ -20,12 +21,23 @@ function App() {
 
   return (
     <div className={"App"}>
+      {/* <Select
+        value={ratingValue}
+        onChange={setRatingValue}
+        items={[
+          { title: "1", value: 1 },
+          { title: "2", value: 2 },
+          { title: "3", value: 3 },
+        ]}
+      /> */}
       <Rating value={ratingValue} onClick={setRatingValue} />
       <UncontrolledRating onChange={setRatingValue} />
       <Accordion
         titleValue="Menu"
         collapsed={accordionCollapsed}
         onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+        onClick={(value) => console.log(value)}
+        items={[]}
       />
       <OnOffFromLesson on={switchOn} onChange={setSwitchOn} />
       <UnControlledOnOff onChange={setSwitchOn} />
@@ -41,4 +53,5 @@ function PageTitle(props: PageTitlePropsType) {
   console.log("PageTitle is rendering");
   return <h1>{props.title}</h1>;
 }
+
 export default App;
