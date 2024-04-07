@@ -1,9 +1,18 @@
-import { ActionType, TOGGLE_CONSTANT } from "./UncontrolledAccordion";
 
-export const reducer = (state: boolean, action: ActionType) => {
+
+
+export type ActionType = {
+  type: string;
+};
+export const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED";
+
+type StatType = {
+  collapsed: boolean;
+}
+export const reducer = (state: StatType, action: ActionType):StatType => {
   switch (action.type) {
     case TOGGLE_CONSTANT:
-      return !state;
+      return { ...state, collapsed: !state.collapsed };
 
     default:
       throw new Error("I don't understand this action");

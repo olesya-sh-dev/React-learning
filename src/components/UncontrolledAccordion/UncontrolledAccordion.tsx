@@ -1,19 +1,17 @@
 import { useReducer, useState } from "react";
-import { reducer } from "./reducer";
+import { TOGGLE_CONSTANT, reducer } from "./reducer";
 
 type AccordionPropsType = {
   titleValue: string;
 };
 
-export type ActionType = {
-  type: string;
-};
-export const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED";
+
 export function UncontrolledAccordion(props: AccordionPropsType) {
   console.log("UncontrolledAccordion is rendering");
   // const collapsed = true;
   //let [collapsed, setCollapsed] = useState(false);
-  let [collapsed, dispatch] = useReducer(reducer, false);
+  let [state, dispatch] = useReducer(reducer, {
+    collapsed: false,});
 
   console.log("Accordion is rendering");
 
@@ -32,7 +30,7 @@ export function UncontrolledAccordion(props: AccordionPropsType) {
           dispatch({ type: TOGGLE_CONSTANT });
         }}
       />
-      {!collapsed && <AccordionBody />}
+      {!state.collapsed && <AccordionBody />}
     </div>
   );
 }
