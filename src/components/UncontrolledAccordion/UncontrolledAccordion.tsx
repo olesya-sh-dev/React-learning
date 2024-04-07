@@ -1,24 +1,14 @@
 import { useReducer, useState } from "react";
+import { reducer } from "./reducer";
 
 type AccordionPropsType = {
   titleValue: string;
 };
 
-type ActionType = {
+export type ActionType = {
   type: string;
 };
-const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED";
-const reducer = (state: boolean, action: ActionType) => {
-  switch (action.type) {
-    case TOGGLE_CONSTANT:
-      return !state;
-
-    default:
-      throw new Error("I don't understand this action");
-  }
-  return state;
-};
-  
+export const TOGGLE_CONSTANT = "TOGGLE-COLLAPSED";
 export function UncontrolledAccordion(props: AccordionPropsType) {
   console.log("UncontrolledAccordion is rendering");
   // const collapsed = true;
