@@ -1,0 +1,20 @@
+.select .main {
+  border: 1px solid black;
+  display: inline-block;
+  min-height: 20px;
+  min-width: 40px;
+}
+.items {
+  /* display: none; */
+  position: absolute;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* .select.active .items {
+  display: block;
+} прячем с помощью CSS*/
+.item.selected {
+  background-color: blue;
+  color: white;
+}
