@@ -19,6 +19,12 @@ function App() {
   let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false);
   let [switchOn, setSwitchOn] = useState(false);
 
+  const RatingMemo = React.memo(Rating);
+  const UnControRatingMemo = React.memo(UncontrolledRating);
+  const AccordionMemo = React.memo(Accordion);
+  const OnOffFromLessonMemo = React.memo(OnOffFromLesson);
+  const UnControlledOnOffMemo = React.memo(UnControlledOnOff);
+
   return (
     <div className={"App"}>
       {/* <Select
@@ -30,17 +36,17 @@ function App() {
           { title: "3", value: 3 },
         ]}
       /> */}
-      <Rating value={ratingValue} onClick={setRatingValue} />
-      <UncontrolledRating onChange={setRatingValue} />
-      <Accordion
+      <RatingMemo value={ratingValue} onClick={setRatingValue} />
+      <UnControRatingMemo onChange={setRatingValue} />
+      <AccordionMemo
         titleValue="Menu"
         collapsed={accordionCollapsed}
         onChange={() => setAccordionCollapsed(!accordionCollapsed)}
         onClick={(value) => console.log(value)}
         items={[]}
       />
-      <OnOffFromLesson on={switchOn} onChange={setSwitchOn} />
-      <UnControlledOnOff onChange={setSwitchOn} />
+      <OnOffFromLessonMemo on={switchOn} onChange={setSwitchOn} />
+      <UnControlledOnOffMemo onChange={setSwitchOn} />
       {switchOn.toString()}
     </div>
   );
