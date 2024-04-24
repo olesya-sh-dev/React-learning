@@ -11,7 +11,7 @@ export const SimpleExample = () => {
   console.log("SimpleExample");
 
   useEffect(() => {
-    debugger
+    //debugger
     console.log("useEffect every render");
     document.title = counter.toString();
   });
