@@ -8,4 +8,5 @@ export default {
 };
 
 
-export const BaseExample = () => <Clock />
+export const BaseAnalogExample = () => <Clock mode="analog"/>
+export const DigitalExample = () => <Clock mode="digital"/>
