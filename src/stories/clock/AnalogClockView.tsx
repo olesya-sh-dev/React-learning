@@ -1,5 +1,5 @@
 import { ClockViewPropsType } from "./Clock";
-import "/AnalogClockView.css";
+//import "/AnalogClockView.css";
 
 export const AnalogClockView: React.FC<ClockViewPropsType> = ({ date }) => {
   const secondsStyle = {
